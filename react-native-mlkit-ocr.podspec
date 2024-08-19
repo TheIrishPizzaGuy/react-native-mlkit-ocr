@@ -16,7 +16,6 @@ Pod::Spec.new do |s|
 
   s.source_files    = "ios/**/*.{h,m,mm}"
 
-
   if ENV['RCT_NEW_ARCH_ENABLED'] == '1'
     folly_compiler_flags = '-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32'
 
@@ -28,26 +27,20 @@ Pod::Spec.new do |s|
     s.compiler_flags  = folly_compiler_flags + ' -DRN_FABRIC_ENABLED'
 
     s.dependency "React"
-    s.dependency "React-RCTFabric" # This is for fabric component
+    s.dependency "React-RCTFabric"
     s.dependency "React-Codegen"
     s.dependency "RCT-Folly"
     s.dependency "RCTRequired"
     s.dependency "RCTTypeSafety"
     s.dependency "ReactCommon/turbomodule/core"
-
-  # To recognize Latin script
-  s.dependency 'GoogleMLKit/TextRecognition', '4.0.0'
-  # To recognize Chinese script
-  s.dependency 'GoogleMLKit/TextRecognitionChinese', '4.0.0'
-  # To recognize Devanagari script
-  s.dependency 'GoogleMLKit/TextRecognitionDevanagari', '4.0.0'
-  # To recognize Japanese script
-  s.dependency 'GoogleMLKit/TextRecognitionJapanese', '4.0.0'
-  # To recognize Korean script
-  s.dependency 'GoogleMLKit/TextRecognitionKorean', '4.0.0'
-
   else
     s.dependency "React-Core"
   end
-end
 
+  # Adding ML Kit dependencies
+  s.dependency 'GoogleMLKit/TextRecognition', '~> 4.0.0'
+  s.dependency 'GoogleMLKit/TextRecognitionChinese', '~> 4.0.0'
+  s.dependency 'GoogleMLKit/TextRecognitionDevanagari', '~> 4.0.0'
+  s.dependency 'GoogleMLKit/TextRecognitionJapanese', '~> 4.0.0'
+  s.dependency 'GoogleMLKit/TextRecognitionKorean', '~> 4.0.0'
+end
