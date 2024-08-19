@@ -152,6 +152,9 @@
       ]
     ]
   },
+  "dependencies": {
+    "react-native-worklets-core": "^1.3.3"
+  },
   "codegenConfig": {
     "libraries": [
       {

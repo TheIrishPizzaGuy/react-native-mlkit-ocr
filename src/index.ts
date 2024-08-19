@@ -17,6 +17,7 @@ const MlkitOcr: MlkitOcrModule = isTurboModuleEnabled
 
 const MLKit: MlkitOcrModule = {
   detectFromUri: async (uri: string) => {
+    'worklet';
     const result = await MlkitOcr.detectFromUri(uri);
     if (!result) {
       return [];
