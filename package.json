@@ -1,6 +1,6 @@
 {
   "name": "react-native-mlkit-ocr",
-  "version": "0.3.5",
+  "version": "1.5.2",
   "description": "Google on-device MLKit text recognition for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -37,7 +37,11 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/agoldis/react-native-mlkit-ocr",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a7med-mahmoud/react-native-ml-kit.git",
+    "baseUrl": "https://github.com/a7med-mahmoud/react-native-ml-kit"
+  },
   "author": "Andrew Goldis <agoldis@gmail.com> (https://github.com/agoldis)",
   "license": "MIT",
   "bugs": {

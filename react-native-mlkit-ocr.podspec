@@ -11,12 +11,11 @@ Pod::Spec.new do |s|
   s.license         = package["license"]
   s.author          = package["author"]
 
-  s.platforms       = { :ios => "10.0" }
+  s.platforms    = { :ios => "12.0" }
   s.source          = { :git => "https://github.com/agoldis/react-native-mlkit-ocr.git", :tag => "#{s.version}" }
 
   s.source_files    = "ios/**/*.{h,m,mm}"
 
-  s.dependency "GoogleMLKit/TextRecognition", "2.6.0"
 
   if ENV['RCT_NEW_ARCH_ENABLED'] == '1'
     folly_compiler_flags = '-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32'
@@ -35,6 +34,18 @@ Pod::Spec.new do |s|
     s.dependency "RCTRequired"
     s.dependency "RCTTypeSafety"
     s.dependency "ReactCommon/turbomodule/core"
+
+  # To recognize Latin script
+  s.dependency 'GoogleMLKit/TextRecognition', '6.0.0'
+  # To recognize Chinese script
+  s.dependency 'GoogleMLKit/TextRecognitionChinese', '6.0.0'
+  # To recognize Devanagari script
+  s.dependency 'GoogleMLKit/TextRecognitionDevanagari', '6.0.0'
+  # To recognize Japanese script
+  s.dependency 'GoogleMLKit/TextRecognitionJapanese', '6.0.0'
+  # To recognize Korean script
+  s.dependency 'GoogleMLKit/TextRecognitionKorean', '6.0.0'
+
   else
     s.dependency "React-Core"
   end
